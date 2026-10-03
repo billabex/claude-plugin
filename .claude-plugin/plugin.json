@@ -1,0 +1,15 @@
+{
+  "name": "billabex",
+  "displayName": "Billabex",
+  "version": "1.0.0",
+  "description": "Review customer receivables, invoices, balances, communications, and tasks in Billabex, then manage B2B payment follow-up from Claude.",
+  "author": {
+    "name": "Billabex",
+    "email": "support@billabex.com",
+    "url": "https://www.billabex.com/"
+  },
+  "homepage": "https://developer.billabex.com/",
+  "repository": "https://github.com/billabex/claude-plugin",
+  "license": "MIT",
+  "keywords": ["accounts-receivable", "invoices", "payment-follow-up", "collections", "finance"]
+}
