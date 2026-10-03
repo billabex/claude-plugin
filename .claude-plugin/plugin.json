@@ -1,7 +1,6 @@
 {
   "name": "billabex",
   "displayName": "Billabex",
-  "version": "1.0.0",
   "description": "Review customer receivables, invoices, balances, communications, and tasks in Billabex, then manage B2B payment follow-up from Claude.",
   "author": {
     "name": "Billabex",
