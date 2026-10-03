@@ -11,5 +11,16 @@
   "homepage": "https://developer.billabex.com/",
   "repository": "https://github.com/billabex/claude-plugin",
   "license": "MIT",
-  "keywords": ["accounts-receivable", "invoices", "payment-follow-up", "collections", "finance"]
+  "keywords": [
+    "accounts-receivable",
+    "invoices",
+    "payment-follow-up",
+    "collections",
+    "finance"
+  ],
+  "icon": "./assets/logo.png",
+  "documentationUrl": "https://developer.billabex.com/en/guides/mcp/",
+  "supportUrl": "https://www.billabex.com/en/help/",
+  "privacyPolicyUrl": "https://www.billabex.com/en/privacy-policy",
+  "termsOfServiceUrl": "https://www.billabex.com/en/terms-and-conditions-of-use"
 }
