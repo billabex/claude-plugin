@@ -31,6 +31,17 @@ Analyses are read-only. Every write (sending a message, pausing follow-up, editi
 requires an explicit, unambiguous request from you, and Claude asks for confirmation before
 destructive actions.
 
+## Emails sent to your customers
+
+When you approve a payment reminder (`prepare-payment-follow-up-email`) or a change to a scheduled
+email (`adjust-scheduled-follow-ups`), Claude only writes the body. The email is sent by your
+Billabex agent, and Billabex's payment follow-up service is operated by
+[Revoptim](https://www.revoptim.com). Billabex therefore appends the agent's signature to every
+email: the agent's name and `@revoptim.com` address, the mention that it writes on behalf of your
+company, the Revoptim logo, a link to www.revoptim.com, and a notice that an AI agent wrote the
+message. The skills tell Claude not to write a signature of its own, and the plugin adds no other
+branding, link, or advertising to Claude's answers or to the emails.
+
 ## Requirements
 
 A Billabex account. You can [create one](https://www.billabex.com) and connect your billing tool

@@ -1,7 +1,7 @@
 {
   "name": "billabex",
   "displayName": "Billabex",
-  "description": "Review customer receivables, invoices, balances, communications, and tasks in Billabex, then manage B2B payment follow-up from Claude.",
+  "description": "Review customer receivables, invoices, balances, communications, and tasks in Billabex, then manage B2B payment follow-up from Claude. Emails you approve are sent by your Billabex agent and carry its Revoptim signature.",
   "author": {
     "name": "Billabex",
     "email": "support@billabex.com",
