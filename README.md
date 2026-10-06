@@ -12,7 +12,7 @@ steer payment follow-up from a conversation.
 - **The Billabex MCP connector** (`https://next.billabex.com/mcp`). Signing in happens in your
   browser through Billabex OAuth; the plugin stores no credential. Every call goes to Billabex's
   own API and only reads or changes data in the workspaces you authorize.
-- **Ten skills** that teach Claude the usual receivables workflows:
+- **Eleven skills** that teach Claude the usual receivables workflows:
 
 | Skill | Use it to |
 | --- | --- |
@@ -26,6 +26,7 @@ steer payment follow-up from a conversation.
 | `prepare-payment-follow-up-email` | Draft a payment reminder and send it only after your approval. |
 | `control-automatic-payment-follow-up` | Pause or resume automatic follow-up for one customer. |
 | `enrich-customer-records` | Add a missing contact or invoice to a customer account. |
+| `import-invoice` | Import an invoice document, creating the customer first if it does not exist yet. |
 
 Analyses are read-only. Every write (sending a message, pausing follow-up, editing a record)
 requires an explicit, unambiguous request from you, and Claude asks for confirmation before
