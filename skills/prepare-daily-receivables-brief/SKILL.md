@@ -6,7 +6,7 @@ description: Prepare a daily customer receivables brief covering changes from th
 # Prepare Daily Receivables Brief
 
 1. Resolve the organization with `list-organizations` only when the context does not identify it.
-2. Read the last 24 hours with `list-incoming-communications`, `list-outgoing-communications`, `list-invoices`, `list-account-tasks`, and `list-customer-balances` as needed.
+2. Read the last 24 hours with `list-communications`, `list-invoices`, `list-account-tasks`, and `list-customer-balances` as needed.
 3. Summarize payments received, newly overdue invoices, customer replies, future emails already scheduled by Billabex, and tasks created because the agent needs user input.
 4. Rank today's actions by urgency, financial exposure, and what is blocking the autonomous payment follow-up.
 

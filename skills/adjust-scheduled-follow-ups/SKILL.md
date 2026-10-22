@@ -5,7 +5,7 @@ description: Review and adjust future Billabex payment follow-up emails for sele
 
 # Adjust Scheduled Follow-ups
 
-1. Resolve the organization if needed, find the customer with `list-accounts`, then use `list-outgoing-communications-by-account` and `get-outgoing-communication` to identify the exact unsent email.
+1. Resolve the organization if needed, find the customer with `list-accounts`, then use `list-communications` for that account, filtered on type `OutgoingEmail` and status `Scheduled`, and `get-communication` to identify the exact unsent email.
 2. Show the customer, current scheduled date, recipients, subject, and content before proposing a change.
 3. Treat a tone request as an edit to the selected scheduled emails, not as a persistent account preference. Preserve facts, amounts, invoice references, commitments, and the agent's third-party identity.
 4. Preview the exact new date or email content. Do not include a signature because Billabex adds the current agent's signature automatically.

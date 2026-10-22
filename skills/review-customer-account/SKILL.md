@@ -7,7 +7,7 @@ description: Review one customer account across invoices, credit notes, outstand
 
 1. Resolve the organization if needed, then find the customer with the `query` parameter of `list-accounts`. Ask for clarification when several names match.
 2. Use `list-customer-balances` and select the balance whose `accountId` matches the customer. If one exists, pass its `id` to `get-customer-balance` as `balanceId`.
-3. Use `get-account`, `list-invoices`, `list-credit-notes`, `list-contacts`, `list-incoming-communications-by-account`, `list-outgoing-communications-by-account`, and `list-account-tasks` as needed.
+3. Use `get-account`, `list-invoices`, `list-credit-notes`, `list-contacts`, `list-communications` for that account, `get-communication`, `get-account-dunning-status`, and `list-account-tasks` as needed.
 4. Present the financial position, credits, contacts, communication history, next scheduled email, open tasks, blockers, and payment behavior.
 5. Explain what Billabex is currently doing for the account and recommend one clear next action without executing it.
 
