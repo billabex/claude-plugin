@@ -1,0 +1,30 @@
+name: Check skill tools
+
+# Every tool a skill names must exist on the live Billabex MCP server. The server renames and
+# merges tools on its own schedule, so this also runs daily to catch a rename after deployment.
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compare skill tool names with the public MCP catalogue
+        run: |
+          curl -fsS https://next.billabex.com/mcp/tools | jq -r '.tools[].name' | sort -u > tools.txt
+          ls skills | sort -u > skills.txt
+          grep -ohE '`[a-z]+(-[a-z]+)+`' skills/*/SKILL.md | tr -d '`' | sort -u > named.txt
+          missing=$(comm -23 named.txt tools.txt | comm -23 - skills.txt)
+          if [ -n "$missing" ]; then
+            echo "::error::Skills name tools the MCP server no longer exposes:"
+            for tool in $missing; do
+              echo "::error::$tool in $(grep -lF "\`$tool\`" skills/*/SKILL.md | tr '\n' ' ')"
+            done
+            exit 1
+          fi
+          echo "All $(wc -l < named.txt) names found among $(wc -l < tools.txt) tools and $(wc -l < skills.txt) skills."
