@@ -5,7 +5,7 @@ invoices come in from your billing tools, and an AI agent follows up with your c
 behalf. This plugin connects Claude to your Billabex workspace so you can review receivables and
 steer payment follow-up from a conversation.
 
-![Billabex](assets/logo.png)
+![Billabex](.claude-plugin/icon.png)
 
 ## What it contains
 
