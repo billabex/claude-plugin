@@ -7,6 +7,13 @@ steer payment follow-up from a conversation.
 
 ![Billabex](.claude-plugin/icon.png)
 
+
+## Install
+
+```
+/plugin install billabex --marketplace billabex/claude-plugin
+```
+
 ## What it contains
 
 - **The Billabex MCP connector** (`https://next.billabex.com/mcp`). Signing in happens in your

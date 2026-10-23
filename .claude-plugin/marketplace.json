@@ -1,0 +1,15 @@
+{
+  "name": "billabex",
+  "description": "Billabex plugins for Claude: accounts receivable and B2B payment follow-up.",
+  "owner": {
+    "name": "Billabex",
+    "email": "support@billabex.com"
+  },
+  "plugins": [
+    {
+      "name": "billabex",
+      "source": "./",
+      "description": "Review customer receivables and manage B2B payment follow-up in Billabex from Claude."
+    }
+  ]
+}
