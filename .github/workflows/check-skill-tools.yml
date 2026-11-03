@@ -2,6 +2,8 @@ name: Check skill tools
 
 # Every tool a skill names must exist on the live Billabex MCP server. The server renames and
 # merges tools on its own schedule, so this also runs daily to catch a rename after deployment.
+# A skill also names values a tool accepts (the `kind` of answer-account-task, for instance): any
+# const or enum string of a tool's input schema counts as known.
 on:
   push:
   pull_request:
@@ -16,10 +18,12 @@ jobs:
       - uses: actions/checkout@v4
       - name: Compare skill tool names with the public MCP catalogue
         run: |
-          curl -fsS https://next.billabex.com/mcp/tools | jq -r '.tools[].name' | sort -u > tools.txt
+          curl -fsS https://next.billabex.com/mcp/tools > catalogue.json
+          jq -r '.tools[].name' catalogue.json | sort -u > tools.txt
+          jq -r '[.tools[].inputSchema | .. | objects | (.const? // empty), (.enum? // empty)] | flatten | .[] | strings' catalogue.json | sort -u > values.txt
           ls skills | sort -u > skills.txt
           grep -ohE '`[a-z]+(-[a-z]+)+`' skills/*/SKILL.md | tr -d '`' | sort -u > named.txt
-          missing=$(comm -23 named.txt tools.txt | comm -23 - skills.txt)
+          missing=$(comm -23 named.txt tools.txt | comm -23 - skills.txt | comm -23 - values.txt)
           if [ -n "$missing" ]; then
             echo "::error::Skills name tools the MCP server no longer exposes:"
             for tool in $missing; do
